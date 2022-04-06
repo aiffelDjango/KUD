@@ -80,6 +80,8 @@
 - 이제 `django`를 설치가 완료되었으니 해당 프로젝트를 시작해볼려고 합니다.
 
 ```console
+    cd ..
+    cd ..
     django-admin startproject firstproejct
 ```
 
