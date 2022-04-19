@@ -11,5 +11,5 @@
 ## 커리큘럼
 
 [📝 1장 세팅](./README/Setting/1.Setting.md)  
-[🚀 2장 HTML세팅](./README/HTML/2-1.Setting.md)
+[🚀 2장 HTML세팅](./README/HTML/2-1.Setting.md)  
 [🎨 3장 CSS](./README/CSS/3.CSS.md)
