@@ -1,6 +1,6 @@
 # Django API 구축
 
-<p align="center"><img src="./IMG/main.png"></p>
+<p align="center"><img src="https://gaussian37.github.io/assets/img/python/django/django.png"></p>
 
 <img src="https://img.shields.io/badge/django-F6E05E?style=for-the-badge&logo=django&logoColor=white"> 
 <img src="https://img.shields.io/badge/python-3776AB?style=for-the-badge&logo=python&logoColor=white">
