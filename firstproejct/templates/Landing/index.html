@@ -1,130 +1,85 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>Flexbox Layout Example</title>
-  <style>
-    .flex-container {
-  margin: 10px;
-  padding: 15px;
-  border-radius: 5px;
-  background: #60B99A;
-  
-  display: flex;
-  justify-content: space-around;
-}
-
-.flex-item {
-  margin: 10px;
-  padding: 20px;
-  color: #fff;
-  text-align: center;
-  border-radius: 5px;
-  background: #4584b1;
-}
-  </style>
-</head>
-<body>
-  <div class="flex-container">
-    <div class="flex-item">1</div>
-    <div class="flex-item">2</div>
-    <div class="flex-item">3</div>
-    <div class="flex-item">4</div>
-    <div class="flex-item">5</div>
-  </div>
-</body>
-</html>
-<!-- <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTML 공부</title>
-    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel = "stylesheet" href = "{% static 'css/main.css' %}">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+    </style>
+    <title>PortFolio</title>
 </head>
 <body>
-    <h1>Hello World</h1>
-    <p>This is a web page.</p> -->
-    <!-- <h1>h1</h1>
-    <h2>h2</h2>
-    <h3>h3</h3>
-    <h4>h4</h4>
-    <h5>h5</h5>
-    <h6>h6</h6> -->
-    <!-- <img src="/static/img/1.jpg" alt="리누스 토발즈">
-     <span>span 태그1</span>
-    <span>span 태그2</span>
-    <div>안녕하세요</div>
-    <div>두번째 영역입니다</div>
-    <a href="https://www.google.com" target="_blank">Google Link</a>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id voluptate velit asperiores tenetur consectetur. Quasi, necessitatibus asperiores? Dignissimos enim, soluta, consequatur commodi placeat amet possimus quae voluptates quos sint accusamus?</p>
-    <ul>
-        <li>list item1</li>
-        <li>list item2</li>
-        <li>list item3</li>
-        <li>list item4</li>
-    </ul>
 
-    <ol>
-        <li>list item1</li>
-        <li>list item2</li>
-        <li>list item3</li>
-        <li>list item4</li>
-    </ol>
-    <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, modi? Eius ut,
-    <br />
-        alias consequatur aliquam eveniet iure recusandae sunt? Dicta quae
-    <br />
-        voluptatibus ea, quas veritatis qui ab nihil nulla mollitia.
-    </p>
-    <form>
-        <label class="label">아이디</label> <br />
-        <input type="text" name="id" placeholder=" 아이디 입력하세요." /> <br />
+    <div id="container">
+        <nav >
+            <ul>
+                <li><a href = "#Home"><b>Home</b></a></li>
+                <li><a href = "#About"><b>About</b></a></li>
+                <li><a href = "#Gallery"><b>Gallery</b></a></li>
+                <li><a href = "#Contact"><b>Contact</b></a></li>
+            </ul>
+        </nav>
 
-        <label class="label">이름</label><br />
-        <input type="text" name="name" placeholder=" 이름 입력하세요." /> <br />
+        <div id="Home" class="listItem">
+            <span class="profile"><img src="{% static 'img/main.jpg' %}" width="550px" height="550px" alt=""/></span> 
+            <h3><strong>This Cat is so Cute</strong> <br>You can scroll down if you want to see me more!</h3>
+        </div>
 
-        <label class="label">비밀번호</label> <br />
-        <input
-            type="password"
-            name="password"
-            placeholder=" 비밀번호 입력하세요"
-        /><br />
+        <div id="About" class="listItem">
+            <h1> About </h1>
+            <div>
+               <img class = "profile" src ="{% static 'img/2.jpg' %}" alt="" width="300px" height="300px">
+                <div class="AboutContents">
+                    <h2>
+                        <strong>Lorem ipsum dolor sit amet <br>Lorem ipsum dolors</strong>
+                    </h2>
+                    <h3 > 
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>
+                        Repudiandae a tempora quis soluta, ratione architecto!<br>
+                        Facere, possimus modi ducimus perspiciatis nostrum<br>
+                        dolorum id voluptatum fuga totam sint harum. Quae, nemo!<br>
+                        Repudiandae a tempora quis soluta, ratione architecto!<br>
+                        Facere, possimus modi ducimus perspiciatis nostrum<br>
+                        dolorum id voluptatum fuga totam sint harum. Quae, nemo!<br>
+                    </h3>
+                </div>
+             </div>
+        </div>
+  
+        <div id="Gallery" class="listItem">
+            <h1> Gallery  </h1>
+            <div>
+                <div class="GalleryItems">
+                    <img class = "grid_item" src="{% static 'img/3-1.jpg' %}" alt="">
+                    <img class = "grid_item" src="{% static 'img/3-2.jpg' %}" alt="">
+                    <img class = "grid_item" src="{% static 'img/3-3.jpg' %}" alt="">
+                    <img class = "grid_item" src="{% static 'img/3-4.jpg' %}" alt="">
+                    <img class = "grid_item" src="{% static 'img/3-1.jpg' %}" alt="">
+                    <img class = "grid_item" src="{% static 'img/3-2.jpg' %}" alt="">
+                    <img class = "grid_item" src="{% static 'img/3-3.jpg' %}" alt="">
+                    <img class = "grid_item" src="{% static 'img/3-4.jpg' %}" alt="">
+                </div>
+            </div>
+        </div>
 
-        <label class="label">이메일</label> <br />
-        <input type="text" name="email1" placeholder=" 이메일 입력하세요" />@
-        <select name="email2">
-            <option value="" disabled selected="selected">선택하세요</option>
-            <option value="daum.net">daum.net</option>
-            <option value="naver.com">naver.com</option>
-            <option value="google.com">google.com</option>
-            <option value="D">직접 입력</option></select
-        ><br />
-
-        <label class="label">생일</label><br />
-        <input type="date" name="birth" /><br />
-
-        <label class="label">자기소개</label><br />
-        <textarea
-            name="profile"
-            cols="50"
-            rows="5"
-            placeholder=" 자기소개를 300자 이내로 작성하세요"
-        ></textarea
-        ><br />
-
-        <input type="submit" />
-    </form>
-
-    <button type="button" onclick="alert('Hello World!')">클릭해 보세요!</button>
-    <p>
-       일반, <br/>
-        <strong>볼드체</strong> <br/>
-        <em>이텔릭체</em> <br/>
-        <del>이러면 나무위키</del> <br/>
-        <ins>밑줄</ins> <br/>
-</p> -->
+        <div id="Contact" class="listItem">
+            <h1> Contact </h1>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/0xJxgvJO2Xo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="ContactLinkWrapper">
+                <a href="https://velog.io/@subtitle1" class="ContactLink">Blog</a>
+                <a href="mailto:stella.kim.96211@gmail.com" class="ContactLink">Gmail</a>
+                <a href="https://github.com/subtitle1" class="ContactLink">Github</a>
+            </div>
+            <div>
+                This is my favorite Music.
+            </div>
+        </div>
+        <footer>
+            This site is a learning page through Django.
+        </footer>
+    <div>
 </body>
 </html>
