@@ -7,6 +7,12 @@
     <title>Sticker AI</title>
 </head>
 <body>
-    
+    <div class="container">
+        <form method="POST" action="{% url 'stickerResult' %}" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type="file" name="image"><br>
+            <input type="submit" value="테스트 해보기 ">
+        </form>
+    </div>
 </body>
 </html>
