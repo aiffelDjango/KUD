@@ -5,13 +5,15 @@ import cv2
 import matplotlib.pyplot as plt
 import numpy as np
 import dlib
+import base64
 
 # Section 2
 # 사진 설정
 def stickerGen(img):
-    my_image_path = "C:/Users/kimud/KUD/firstproejct/media/bfImages/"+img
-    my_image_path_encode= np.fromfile(my_image_path, np.uint8)
-    img_bgr = cv2.imdecode(my_image_path_encode,cv2.IMREAD_UNCHANGED)    # OpenCV로 이미지를 불러옵니다
+    img_bgr = cv2.imdecode(np.fromstring(img, np.uint8), cv2.IMREAD_UNCHANGED)
+    # my_image_path = "C:/Users/kimud/KUD/firstproejct/media/bfImages/"+img
+    # my_image_path_encode= np.fromfile(my_image_path, np.uint8)
+    # img_bgr = cv2.imdecode(my_image_path_encode,cv2.IMREAD_UNCHANGED)    # OpenCV로 이미지를 불러옵니다
     img_show = img_bgr.copy()      # 출력용 이미지를 따로 보관합니다
 
     # Section 3
@@ -22,7 +24,6 @@ def stickerGen(img):
     img_rgb = cv2.cvtColor(img_bgr, cv2.COLOR_BGR2RGB)
     dlib_rects = detector_hog(img_rgb, 1)   # (image, num of image pyramid)
 
-    # Section 3
     # Bounding box 그리기 
     for dlib_rect in dlib_rects:
         l = dlib_rect.left()
@@ -95,6 +96,7 @@ def stickerGen(img):
     img_bgr[refined_y:refined_y +img_sticker.shape[0], refined_x:refined_x+img_sticker.shape[1]] = \
         np.where(img_sticker==0,sticker_area,img_sticker).astype(np.uint8)
 
-    cv2.imwrite("C:/Users/kimud/KUD/firstproejct/media/afImages/"+img, img_bgr)
-
-stickerGen( "Image.png")
+    img_bgr_buffer= cv2.imencode('.jpg', img_bgr)[1]
+    result = base64.b64encode(img_bgr_buffer).decode("utf-8")
+    return result
+    # cv2.imwrite("C:/Users/kimud/KUD/firstproejct/media/afImages/"+img, img_bgr)

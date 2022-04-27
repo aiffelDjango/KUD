@@ -10,4 +10,5 @@ urlpatterns = [
     path('study',Landing.views.study,name="study"),
     path('sticker',Landing.views.sticker,name="sticker"),
     path('stickerResult',Landing.views.stickerResult,name="stickerResult")
-]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]
+# + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
