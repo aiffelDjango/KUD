@@ -1,0 +1,50 @@
+body{
+    margin: 0;
+    font-family: 'Poiret One', cursive;
+}
+.title{
+    width: 100%;
+    background-color: #fce205;
+    text-align: center;
+    font-size: 8em;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 100px;
+}
+.container{
+    width: 100%;
+    height: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.submitBtn{
+    margin: 10px;
+    font-size: 21px;
+    font-family: 'Poiret One', cursive;
+    position: relative;
+    padding: 15px 30px;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    font-weight: 600;
+    transition: 0.25s;
+    border: 3px solid #fce205;
+    background-color: white;
+    color: black;
+}
+.inputFileBtn{
+    margin: 20px;
+    padding: 15px 30px;
+    border: 3px solid #fce205;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    color: black;
+    font-weight: 600;
+    cursor: pointer;
+}
+.inputFile{
+    display: none;
+}
