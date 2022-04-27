@@ -7,6 +7,8 @@ import numpy as np
 import dlib
 import base64
 
+
+file_dir = os.path.dirname(__file__)
 # Section 2
 # 사진 설정
 def stickerGen(img):
@@ -14,7 +16,7 @@ def stickerGen(img):
     # my_image_path = "C:/Users/kimud/KUD/firstproejct/media/bfImages/"+img
     # my_image_path_encode= np.fromfile(my_image_path, np.uint8)
     # img_bgr = cv2.imdecode(my_image_path_encode,cv2.IMREAD_UNCHANGED)    # OpenCV로 이미지를 불러옵니다
-    img_show = img_bgr.copy()      # 출력용 이미지를 따로 보관합니다
+    # img_show = img_bgr.copy()      # 출력용 이미지를 따로 보관합니다
 
     # Section 3
     # SVG detector를 선언합니다
@@ -25,22 +27,21 @@ def stickerGen(img):
     dlib_rects = detector_hog(img_rgb, 1)   # (image, num of image pyramid)
 
     # Bounding box 그리기 
-    for dlib_rect in dlib_rects:
-        l = dlib_rect.left()
-        t = dlib_rect.top()
-        r = dlib_rect.right()
-        b = dlib_rect.bottom()
+    # for dlib_rect in dlib_rects:
+    #     l = dlib_rect.left()
+    #     t = dlib_rect.top()
+    #     r = dlib_rect.right()
+    #     b = dlib_rect.bottom()
 
-        cv2.rectangle(img_show, (l,t), (r,b), (0,255,0), 2, lineType=cv2.LINE_AA)
+    #     cv2.rectangle(img_show, (l,t), (r,b), (0,255,0), 2, lineType=cv2.LINE_AA)
 
-    img_show_rgb =  cv2.cvtColor(img_show, cv2.COLOR_BGR2RGB)
+    # img_show_rgb =  cv2.cvtColor(img_show, cv2.COLOR_BGR2RGB)
     # plt.imshow(img_show_rgb)
     # plt.show()
 
     # Section 4
     # LandMark 찍기
-
-    model_path = 'C:/Users/kimud/KUD/firstproejct/static/camera_sticker/models/shape_predictor_68_face_landmarks.dat'
+    model_path = file_dir+'/models/shape_predictor_68_face_landmarks.dat'
     landmark_predictor = dlib.shape_predictor(model_path)
 
     list_landmarks = []
@@ -56,11 +57,11 @@ def stickerGen(img):
     # Section 5
     # LandMark 출력
 
-    for landmark in list_landmarks:
-        for point in landmark:
-            cv2.circle(img_show, point, 2, (0, 255, 255), -1)
+    # for landmark in list_landmarks:
+    #     for point in landmark:
+    #         cv2.circle(img_show, point, 2, (0, 255, 255), -1)
 
-    img_show_rgb = cv2.cvtColor(img_show, cv2.COLOR_BGR2RGB)
+    # img_show_rgb = cv2.cvtColor(img_show, cv2.COLOR_BGR2RGB)
 
 
     # Section 6
@@ -72,7 +73,7 @@ def stickerGen(img):
         w = h = dlib_rect.width()
 
     # 스티커 사이즈 조절
-    sticker_path = 'C:/Users/kimud/KUD/firstproejct/static/camera_sticker/images/king.png'
+    sticker_path = file_dir+'/images/king.png'
     img_sticker = cv2.imread(sticker_path) # 스티커 이미지를 불러옵니다
     img_sticker = cv2.resize(img_sticker, (w,h))
 

@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.core.files.storage import default_storage
 from django.http import HttpResponse
 import tempfile
-from utils.sticker import stickerGen
+from stickerUtil.sticker import stickerGen
 
 
 # Create your views here.
