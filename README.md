@@ -13,4 +13,5 @@
 [📝 1장 세팅](./README/Setting/1.Setting.md)  
 [🚀 2장 HTML세팅](./README/HTML/2-1.Setting.md)  
 [🎨 3장 CSS](./README/CSS/3.CSS.md)  
-[✅ 4장 STICKER_AI](./README/Sticker/4.Sticker.md)
+[✅ 4장 STICKER_AI](./README/Sticker/4.Sticker.md)  
+[🗃 5장 SQL](./README/SQL/5.SQL.md) 
