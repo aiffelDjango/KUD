@@ -382,9 +382,72 @@ INSTALLED_APPS = [
 
 - `orm`의 장점은 `DB`와 `Backend`에 의존성을 줄일수 있게 해줍니다.
 
-- `orm`을 통해 `Django`에서 코드를 만들고 이를 `DB(mysql)`에 연결하여 `Backend`에서 컨트롤 하기 쉽게 만들어 보도록 하겠습니다.
+- 그럼 `models.py`는 어떤것일까요?
 
-- 그럼 `orm/models.py` 테이블을 만들고 실습할수 있도록 해보겠습니다.
+- `django`는 `models.py` 파일을 통해 데이터베이스를 조작합니다.
+
+- 각 app에는 models.py라고 하는 파일이 있으며 ORM이란 이름에서 유추할 수 있듯이 우리는 class를 이용하여 데이터베이스에 들어갈 객체를 설계하고 데이터베이스와 매핑한다.
+
+- `models.py`에서 필드를 지정하ㅓ 각각의 클래스 변수는 `models.CharField()`, `models,IntegerField()`, `models.DateTimeField()`, `models.TextField()` 등의 각 필드 타입에 맞는 Field 클래스 객체를 생성하여 할당합니다.
+
+<p align="center"><img src="./IMG/8.png "></p>
+
+- Django 데이터 필드 타입
+
+```py
+models.BinaryField() : Binary - Blob field로 binary 데이터를 저장한다
+
+models.BooleanField() : Boolean - Boolean field로 True/Flase(or 1/0) 값을 저장한다.
+
+models.NullBooleanField() : Boolean - Boolean field와 같지만 null 값을 허용한다.
+
+models.DateField() : Date/time - date field로 date를 저장한다.
+
+models.TimeField() : Date/time - time field로 time을 저장한다.
+
+models.DateTimeField() : Date/time - datetime field로 date와 time을 저장한다.
+
+models.DurationField() : Date/time - 기간을 저장하는 필드
+
+models.AutoField() : Number - 자동으로 값이 커지는 정수를 생성하는 필드
+
+models.BigIntegerField() : Number
+
+models.DecimalField(decimal_places=X, max_digits=Y) : Number - 숫자가 maximum X digit 과 Y decimal point를 갖게하며 X 와 Y 값은 필수이다.
+
+models.FloatField() : Number - float형의 숫자를 저장한다.
+
+models.IntegerField() : Number - 정수를 저장한다.
+
+models.PositiveIntegerField() : Number - Integer field와 같지만 양수만 갖도록 제한한다.
+
+models.PositiveSmallIntegerField() : Number
+
+options.SmallIntegerField() : Number
+
+models.CharField(max_length=N) : Text - max_length 값을 필수로 같는 character field
+
+models.TextField() : Text
+
+models.EmailField() : Text - django의 EmailValidator로 text가 email로 유효한지 판단할 수 있게 한다.
+
+models.FileField() : Text
+
+models.FilePathField() : Text
+
+models.ImageField() : Text
+
+models.GenericIPAddressField() : Text - 유효한 IPv4 나 IPv6 address만 받아들인다.
+
+models.SlugField() : Text
+
+models.URLField() : Text
+
+models.UUIDField() : Text
+
+```
+
+- `orm`을 통해 `Django`에서 코드를 만들고 이를 `DB(mysql)`에 연결하여 `Backend`에서 컨트롤 하기 쉽게 만들어 보도록 하겠습니다.
 
 ```py
 from django.db import models
@@ -392,8 +455,7 @@ from django.db import models
 # 설명만을 위한 모델로, 상당히 대충 작성 되었습니다:)
 class Article(models.Model):
     title = models.CharField(max_length=100)
-    author =models.CharField(max_length=100)
-    email = models.EmailField(max_length=100)
+    image = models.ImageField(blank=True, null=True, upload_to="uploads"
     date = models.DateTimeField(auto_now_add=True)
 
 
@@ -528,9 +590,10 @@ from rest_framework import serializers
 from .models import Article
 
 class ArticleSerializer(serializers.ModelSerializer):
+    image = serializers.ImageField(use_url=True
     class Meta:
         model = Article
-        fields = ['id', 'title', 'author']
+        fields = '__all__'
 ```
 
 - 코드가 상당히 짧아 졌다는걸 알수있습니다.
