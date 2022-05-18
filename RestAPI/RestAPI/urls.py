@@ -16,6 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from orm.views import article_list,article_detail,ArticleAPIView,ArticleDetails
+from django.conf import settings
+from django.conf.urls.static import static
 import Calculator.views
 import sql.views
 
@@ -49,5 +51,4 @@ urlpatterns = [
     path('cls_article/', ArticleAPIView.as_view()),
     path('cls_detail/<int:id>/', ArticleDetails.as_view()),
 
-]
-
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
