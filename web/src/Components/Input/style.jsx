@@ -7,7 +7,7 @@ function InputStyle({preview, imageRef, onChange, onClick}) {
         <div className="max-w-2xl rounded-lg shadow-xl bg-gray-50">
           <div className="m-4">
             <div
-              className="inline-block mb-2 text-gray-500"
+              className="inline-block mb-2 text-gray-500 w-full text-center"
               htmlFor="imageInput"
             >
               File Upload
@@ -54,7 +54,9 @@ function InputStyle({preview, imageRef, onChange, onClick}) {
         </div>
       </div>
       <div className="w-full">
-        <div className="w-4/12 mx-auto mt-16">{preview}</div>
+        <div className="w-4/12 rounded-lg mx-auto mt-16 p-2 bg-white">
+          {preview}
+        </div>
       </div>
     </div>
   );

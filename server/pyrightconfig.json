@@ -1,0 +1,23 @@
+{
+  "include": [
+    "./server/"
+  ],
+  
+  "exclude": [
+    "**/node_modules",
+    "**/__pycache__"
+  ],
+
+  "ignore": [
+  ],
+
+  "venvPath":"/Users/kud/.pyenv/versions/",
+  "venv": "sticker",
+
+  "reportMissingImports": true,
+  "reportMissingTypeStubs": false,
+
+  "pythonVersion": "3.8",
+  "pythonPlatform": "Darwin"
+
+}

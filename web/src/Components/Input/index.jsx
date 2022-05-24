@@ -10,7 +10,7 @@ function Input() {
   useEffect(() => {
     if (image !== '')
       setPreview(
-        <img className="rounded-md drop-shadow-2xl" src={previewURL} alt="" />,
+        <img className="rounded-lg drop-shadow-2xl" src={previewURL} alt="" />,
       );
     return () => {};
   }, [previewURL]);
