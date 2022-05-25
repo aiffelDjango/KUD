@@ -27,9 +27,8 @@ function Input() {
 
       form_data.append('image', getImage);
 
-      let url = 'http://localhost:8000/sticker/';
 
-      axios.post(url, form_data, {
+      axios.post(URL, form_data, {
         headers: {
           'content-type': 'multipart/form-data'
         }
