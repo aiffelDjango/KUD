@@ -31,7 +31,8 @@ function Input() {
       axios.post(URL, form_data, {
         headers: {
           'content-type': 'multipart/form-data'
-        }
+        },
+        timeout: 50000
       }).then(res => {
           console.log(res.data.image)
           setPreviewURL(res.data.image);
