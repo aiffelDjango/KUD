@@ -23,14 +23,17 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = "django-insecure-o+gt65-32^!^l$=-61*8gn+dpc9od3#+#nv3fivi)a(m!xqf=s"
 
-MEDIA_URL = '/images/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'images/')
+MEDIA_URL = "/images/"
+MEDIA_ROOT = os.path.join(BASE_DIR, "images/")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = []
 
+CORS_ORIGIN_ALLOW_ALL = True
+
+CORS_ALLOW_CREDENTIALS = True
 
 # Application definition
 
@@ -43,9 +46,11 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "rest_framework",
     "sticker",
+    "corsheaders", #cors
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware', #cors
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",

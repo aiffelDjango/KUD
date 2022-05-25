@@ -21,7 +21,7 @@ import sticker.views
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("sticker/", sticker.views.stickerResult,name="stickerResult"),
+    path("sticker/", sticker.views.stickerResult, name="stickerResult"),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

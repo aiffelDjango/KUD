@@ -13,7 +13,7 @@ function Input() {
   useEffect(() => {
     if (image !== '')
       setPreview(
-        <img className="rounded-lg drop-shadow-2xl" src={previewURL} alt="" />,
+        <img className="rounded-lg drop-shadow-2xl" src={`data:image/png;base64,${previewURL}`}  alt="" />,
       );
     return () => {};
   }, [previewURL]);
@@ -34,7 +34,8 @@ function Input() {
           'content-type': 'multipart/form-data'
         }
       }).then(res => {
-          console.log(res.data);
+          console.log(res.data.image)
+          setPreviewURL(res.data.image);
         }).catch(err => console.log(err)) 
 
     reader.onloadend = () => {
