@@ -29,7 +29,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "images/")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [{IP주소 적기}}
 
 CORS_ORIGIN_ALLOW_ALL = True
 

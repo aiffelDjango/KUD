@@ -21,10 +21,8 @@ def stickerResult(request):
 
     if request.method == 'POST':
         posts_serializer = PostSerializer(data=request.data)
-        print(request.data)
         if posts_serializer.is_valid():
             imageId = posts_serializer.save()
-            print("이미지 저장 완료")
             imagePath = settings.MEDIA_ROOT+str(imageId.image)
             stickerGen(imagePath)
             with open(imagePath, "rb") as imageFile:

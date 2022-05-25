@@ -8,7 +8,7 @@ function Input() {
   const [previewURL, setPreviewURL] = useState('');
   const [preview, setPreview] = useState(null);
   const imageRef = useRef();
-  const URL = 'http://104.196.225.105:8000/sticker/'
+  const URL = '{IP주소}/sticker/'
 
   useEffect(() => {
     if (image !== '')
