@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "Sticker-server"
+version = "0.1.0"
+description = ""
+authors = ["kimud6003 <kimud6003@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+Django = "^4.0.4"
+cmake = "^3.22.4"
+dlib = "^19.24.0"
+djangorestframework = "^3.13.1"
+opencv-python = "^4.5.5"
+matplotlib = "^3.5.2"
+pyright = "^1.1.248"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

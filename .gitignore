@@ -1,6 +1,9 @@
 
 # Created by https://www.toptal.com/developers/gitignore/api/django
 # Edit at https://www.toptal.com/developers/gitignore?templates=django
+.DS_Store
+
+server/images/
 
 ## env
 myvenv
@@ -157,6 +160,9 @@ dmypy.json
 # pytype static type analyzer
 .pytype/
 
+# DS_Store
+.DS_Store
+
 # Cython debug symbols
 cython_debug/
 
@@ -168,3 +174,4 @@ cython_debug/
 #.idea/
 
 # End of https://www.toptal.com/developers/gitignore/api/django
+
